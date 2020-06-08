@@ -14,8 +14,8 @@ if %Machine% == x86 (
   set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017_64
 )
 
-cd %QTDIR%
-dir
+dir %QTDIR%
+
 
 set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
 
