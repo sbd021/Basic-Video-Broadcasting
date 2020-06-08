@@ -13,7 +13,7 @@ if %Machine% == x86 (
 ) else (
   set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017_64
 )
-
+echo QTDIR=%QTDIR%
 dir %QTDIR%
 
 
