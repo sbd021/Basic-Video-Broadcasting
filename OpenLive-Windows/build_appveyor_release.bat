@@ -4,7 +4,7 @@ title qmake and nmake build prompt
 cd OpenLive-Windows
 set SDKFolderVersion=%~1
 set Machine=%~2
-set ProjName=%~3
+set ProjName=OpenLive
 echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
 dir
@@ -39,7 +39,7 @@ if not exist %PackageDIR% (
 )
 cd %PackageDIR%
 mkdir %Machine%
-xcopy /S /I %WorkingDirectory%\Release\*.* %Machine% /y
+xcopy /S /I ..\Release\*.* %Machine% /y
 xcopy /S /I ..\sdk\dll\*.* %Machine% /y
 cd ..
 rmdir /S /Q Release
