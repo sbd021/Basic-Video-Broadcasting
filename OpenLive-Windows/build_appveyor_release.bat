@@ -1,33 +1,17 @@
 @echo off
 
 title qmake and nmake build prompt
-set SDKVersion=%~1
-set SDKFolderVersion=%~2
-set Machine=%~3
-set ProjName=%~4
-echo SDKVersion: %SDKVersion%
+set SDKFolderVersion=%~1
+set Machine=%~2
+set ProjName=%~3
 echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
-curl -fsSL -o AgoraSDK.zip https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(%Machine%)_v%SDKVersion%_FULL.zip
-if exist AgoraSDK.zip (
-  7z x AgoraSDK.zip -oAgoraSDK
-) else (
-  echo "download sdk failed"
-		echo "https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(%Machine%)_v%SDKVersion%_FULL.zip"
-	 exit
-)
 
-if not exist sdk (mkdir sdk)
-xcopy /S /I AgoraSDK\Agora_Native_SDK_for_Windows_v%SDKFolderVersion%_FULL\sdk sdk /y
-
-if exist AgoraSDK (rmdir /S /Q AgoraSDK)
-
-del AgoraSDK.zip
 
 if %Machine% == x86 (
-  set QTDIR=C:\Qt\5.13.2\msvc2017
+  set QTDIR=C:\Qt5.10.1\5.10.1\\msvc2017
 ) else (
-  set QTDIR=C:\Qt\5.13.2\msvc2017_64
+  set QTDIR=C:\Qt5.10.1\5.10.1\\msvc2017_64
 )
 
 set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
