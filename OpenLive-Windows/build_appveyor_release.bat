@@ -22,7 +22,7 @@ dir %VCINSTALLDIR%
 
 call "%VCINSTALLDIR%\vcvarsall.bat" %Machine%
 
-%QTDIR%\bin\qmake.exe %ProjName%.pro "CONFIG+=release" "CONFIG+=qml_release"
+%QTDIR%\bin\qmake.exe %ProjName%.pro  -spec %QTDIR%\mkspecs\win32-msvc "CONFIG+=release" "CONFIG+=qml_release"
 nmake
 
 if not exist release (
