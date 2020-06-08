@@ -7,13 +7,15 @@ set Machine=%~2
 set ProjName=OpenLive
 echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
-dir
 
 if %Machine% == x86 (
-  set QTDIR=C:\Qt5.10.1\5.10.1\\msvc2017
+  set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017
 ) else (
-  set QTDIR=C:\Qt5.10.1\5.10.1\\msvc2017_64
+  set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017_64
 )
+
+cd %QRDIR%
+dir
 
 set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
 
