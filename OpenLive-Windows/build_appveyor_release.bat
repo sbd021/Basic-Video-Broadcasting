@@ -8,6 +8,7 @@ set WorkingDirectory=%~4
 echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
 echo WorkingDirectory=%WorkingDirectory%
+dir
 
 if %Machine% == x86 (
   set QTDIR=C:\Qt5.10.1\5.10.1\\msvc2017
