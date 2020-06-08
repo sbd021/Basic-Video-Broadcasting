@@ -14,12 +14,13 @@ if %Machine% == x86 (
   set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017_64
 )
 echo QTDIR=%QTDIR%
-dir %QTDIR%
-
 
 set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
 
+dir %VCINSTALLDIR%
+
 call "%VCINSTALLDIR%\vcvarsall.bat" %Machine%
+
 %QTDIR%\bin\qmake.exe %ProjName%.pro "CONFIG+=release" "CONFIG+=qml_release"
 nmake
 
