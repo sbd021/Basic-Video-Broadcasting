@@ -1,13 +1,12 @@
 @echo off
 
 title qmake and nmake build prompt
+cd OpenLive-Windows
 set SDKFolderVersion=%~1
 set Machine=%~2
 set ProjName=%~3
-set WorkingDirectory=%~4
 echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
-echo WorkingDirectory=%WorkingDirectory%
 dir
 
 if %Machine% == x86 (
@@ -19,7 +18,7 @@ if %Machine% == x86 (
 set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
 
 call "%VCINSTALLDIR%\vcvarsall.bat" %Machine%
-%QTDIR%\bin\qmake.exe %WorkingDirectory%\%ProjName%.pro "CONFIG+=release" "CONFIG+=qml_release"
+%QTDIR%\bin\qmake.exe %ProjName%.pro "CONFIG+=release" "CONFIG+=qml_release"
 nmake
 
 if not exist release (
