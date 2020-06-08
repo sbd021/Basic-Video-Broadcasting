@@ -15,8 +15,9 @@ if %Machine% == x86 (
 )
 echo QTDIR=%QTDIR%
 
-set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
+set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build
 
+echo VCINSTALLDIR=%VCINSTALLDIR%
 dir %VCINSTALLDIR%
 
 call "%VCINSTALLDIR%\vcvarsall.bat" %Machine%
