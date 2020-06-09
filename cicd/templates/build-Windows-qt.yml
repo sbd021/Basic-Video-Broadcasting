@@ -38,7 +38,7 @@ jobs:
           targetFolder: ${{ parameters.workingDirectory }}/$(sdkpathname)
       - script: cd ${{ parameters.workingDirectory }}/ && ls
               
-      - script: cicd/scripts/install-qt-win.cmd
+      - script: cicd/scripts/install-qt-win.cmd ${{ parameters.architecture }}
         displayName: 'Install QT'
     
       - script: call ${{ parameters.workingDirectory }}/build_appveyor_release.bat 3.0.1 ${{ parameters.architecture }}
