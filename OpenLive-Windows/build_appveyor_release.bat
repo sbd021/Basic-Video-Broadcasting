@@ -11,7 +11,7 @@ echo ProjName:%ProjName%
 if %Machine% == x86 (
   set QTDIR=C:\Qt5.14.2\msvc2017
 ) else (
-  set QTDIR=C:\Qt5.14.2\msvc2017_64
+  set QTDIR=C:\Qt5.14.2_64\msvc2017_64
 )
 echo QTDIR=%QTDIR%
 
