@@ -9,9 +9,9 @@ echo SDKFolderVersion: %SDKFolderVersion%
 echo ProjName:%ProjName%
 
 if %Machine% == x86 (
-  set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017
+  set QTDIR=C:\Qt5.14.2\msvc2017
 ) else (
-  set QTDIR=C:\Qt5.10.1\5.10.1\msvc2017_64
+  set QTDIR=C:\Qt5.14.2\msvc2017_64
 )
 echo QTDIR=%QTDIR%
 
