@@ -41,9 +41,11 @@ set PackageDIR=%ProjName%_Win_v%SDKFolderVersion%
 if not exist %PackageDIR% (
     mkdir %PackageDIR%
 )
+
 cd %PackageDIR%
 mkdir %Machine%
 xcopy /S /I ..\Release\*.* %Machine% /y
 xcopy /S /I ..\sdk\dll\*.* %Machine% /y
 cd ..
+dir %PackageDIR%
 rmdir /S /Q Release
